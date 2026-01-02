@@ -1,0 +1,14 @@
+artifact_uri: file:///E:/Computer_Vision/vision-based-uav-detection/runs/mlflow/902508114332216184/73dd83c424f340258ee62946aa838d94/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '902508114332216184'
+lifecycle_stage: active
+run_id: 73dd83c424f340258ee62946aa838d94
+run_name: uav_detection
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767350348019
+status: 1
+tags: []
+user_id: chusm

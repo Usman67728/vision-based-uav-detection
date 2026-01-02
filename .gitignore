@@ -7,6 +7,7 @@ __pycache__/
 *.so
 *.jpg
 *.txt
+*.jpg 
 # Distribution / packaging
 .Python
 build/

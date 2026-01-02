@@ -1,0 +1,7 @@
+path: e:\Computer_Vision\vision-based-uav-detection\Dataset
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 1
+names: ['UAV']
