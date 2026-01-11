@@ -8,6 +8,10 @@ __pycache__/
 *.jpg
 *.txt
 *.jpg 
+*.zip
+*.pt
+runs/
+Dataset_Cleaned/
 # Distribution / packaging
 .Python
 build/
