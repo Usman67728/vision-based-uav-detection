@@ -37,7 +37,6 @@ vision-based-uav-detection/
 
 - Python 3.8+
 - NVIDIA GPU with CUDA support (recommended)
-- ~4GB+ VRAM
 
 ### Installation
 
@@ -80,7 +79,6 @@ Training parameters in `train.py`:
 | Model | YOLOv11s | Small variant, balanced speed/accuracy |
 | Epochs | 15 | Training iterations |
 | Image Size | 640×640 | Input resolution |
-| Batch Size | 4 | Optimized for 4GB VRAM |
 
 ## 📊 Dataset
 
@@ -94,21 +92,34 @@ Training parameters in `train.py`:
 
 Bird images are included as **negative samples** (empty labels) rather than a separate class. This teaches the model to explicitly *not* detect birds, significantly reducing false positive rates.
 
-## 📈 Expected Results
+## 📈 Model Performance (Test Set)
 
-After training, evaluation metrics will be saved to `runs/uav_detection/`:
-- Confusion matrix
-- Precision-Recall curves
-- Training loss graphs
-- Sample predictions
+The model was evaluated on an unseen Test Set, demonstrating exceptional detection capabilities.
 
-## 🔧 Hardware Requirements
+| Metric | Value | Interpretation |
+|:---|:---|:---|
+| **mAP50** | **90.72%** | Excellent accuracy in detecting small drones. |
+| **mAP50-95** | **46.96%** | High precision in bounding box placement. |
+| **Precision** | **90.96%** | Extremely low false positive rate (birds are not detected). |
+| **Recall** | **80.38%** | Reliable detection of present threats. |
 
-| Component | Minimum | Recommended |
-|-----------|---------|-------------|
-| GPU VRAM | 4GB | 8GB+ |
-| RAM | 8GB | 16GB |
-| Storage | 5GB | 10GB |
+### Visual Results
+
+#### Training Metrics
+![Training Results](final_uav_results/content/runs/uav_colab_drive/results.png)
+
+#### Confusion Matrix
+![Confusion Matrix](final_uav_results/content/runs/uav_colab_drive/confusion_matrix.png)
+
+#### Precision-Recall Curve
+![PR Curve](final_uav_results/content/runs/uav_colab_drive/BoxPR_curve.png)
+
+## 🛡️ Strategic Application & Future Work
+
+This project works as the **"Sense"** layer in a wider autonomous defense pipeline:
+1.  **Sense (YOLOv11)**: Passively detects potential threats without emitting radar signals.
+2.  **Confirm (TCN)**: Verifies targets by analyzing flight trajectory (distinguishing rigid drone motion from flapping birds).
+3.  **Neutralize (SAC)**: Uses Reinforcement Learning to continuously track and intercept the confirmed threat.
 
 ## 📝 License
 
